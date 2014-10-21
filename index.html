@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="src/jquery.carp.css">
+        <style>
+        body { background: #666;}
+        </style>
+    </head>
+    <body>
+
+        <script>    
+            var myChars = ["À", "Á", "Â"];
+        </script>
+
+
+
+        <input type="text" data-carp="myChars" id="foo">
+        <button data-trigger="carp" data-target="#foo">T</button>
+
+        <input type="text" value="none">
+        <div style="height:200px"></div>
+
+        <input type="text" data-carp="myChars" id="bar">
+        <button data-trigger="carp" data-target="#bar">T</button>
+
+
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="src/jquery.carp.js"></script>
+
+    </body>
+</html>
