@@ -8,28 +8,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="src/jquery.carp.css">
         <style>
-        body { background: #666;}
+            body { background: #ccc;}
+            .border-bottom {padding:30px; border-bottom:1px solid #333;}
         </style>
     </head>
     <body>
 
         <script>    
             var myChars = ["À", "Á", "Â"];
+            var myEscapedChars = ["&acute;", "&adc;", "&aleph;"];
         </script>
 
+        <div class="border-bottom">
+            <p>Using unescaped characters in an array scoped to window.</p>
+            <input type="text" data-carp="myChars" id="foo">
+            <button data-trigger="carp" data-target="#foo">T</button>
+        </div>
 
 
-        <input type="text" data-carp="myChars" id="foo">
-        <button data-trigger="carp" data-target="#foo">T</button>
+        <div class="border-bottom">
+            <p>Using escaped characters in an array scoped to window.</p>
+            <input type="text" data-carp="myEscapedChars" id="bar">
+            <button data-trigger="carp" data-target="#bar">T</button>
+        </div>
 
-        <input type="text" value="none">
-        <div style="height:200px"></div>
+        <div class="border-bottom">
+            <p>Using characters defined in a data-attr.</p>
+            <input type="text" data-carp="myEscapedChars" id="baz">
+            <button data-trigger="carp" data-target="#baz">T</button>
+        </div>
 
-        <input type="text" data-carp="myChars" id="bar">
-        <button data-trigger="carp" data-target="#bar">T</button>
-
-
-
+         <div class="border-bottom">
+            <p>Auto-close on selection</p>
+            <input type="text" data-carp="myEscapedChars" carp-autoclose="true" id="qux">
+            <button data-trigger="carp" data-target="#qux">T</button>
+        </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="src/jquery.carp.js"></script>

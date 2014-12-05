@@ -3,7 +3,7 @@
 	var Carp = function(el){
 		this.$el  = $(el)
 		this.isShown = false;
-		this.palette = '';
+		this.palette = null;
 		this.selectionStart = 0;
 
 		this.containerDiv = $(document.createElement('div')).prop({'class':'carp-container'});
@@ -15,10 +15,10 @@
 
 	Carp.prototype.toggle = function(){
 		if(!this.isShown){
-			if(this.palette === ''){
-				this.createPalette();
-			} else {
+			if(!!this.palette){
 				this.show();
+			} else {
+				this.createPalette();
 			}
 		} else {
 			this.hide();
@@ -50,8 +50,9 @@
 
 	Carp.prototype.insert = function(e){
 		var oldValue = this.$el.val();
-    	var newValue = oldValue.substring(0, this.selectionStart) + e.currentTarget.innerText + oldValue.substring(this.selectionStart);
+    var newValue = oldValue.substring(0, this.selectionStart) + e.currentTarget.innerText + oldValue.substring(this.selectionStart);
 		this.$el.val(newValue);
+		console.log(this.$el)
 	}
 
 	Carp.prototype.show = function(e){
@@ -64,7 +65,7 @@
 		this.isShown = false;
 	}
 
-  	function Plugin(option){
+	function Plugin(option){
 		return this.each(function(){
 			var data = $(this).data('carp.instance');
 			if(!data){
@@ -77,10 +78,10 @@
 				data.getCaretPosition();
 			}
 		});
-  	}
-  	
-  	$.fn.carp             = Plugin;
-  	$.fn.carp.Constructor = Carp;
+	}
+	
+	$.fn.carp             = Plugin;
+	$.fn.carp.Constructor = Carp;
 
 	$('[data-carp]').on('focusout', function(e){
 		var $el = $(e.target)

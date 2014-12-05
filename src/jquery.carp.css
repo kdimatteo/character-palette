@@ -1,29 +1,27 @@
 .carp-arrow {
 	width: 0; 
 	height: 0; 
-	border-left: 20px solid transparent;
-	border-right: 20px solid transparent;
-	border-bottom: 20px solid #fff;	
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #fff;	
+	margin-left: 14px;
 }
 
 .carp-container {
 	position: absolute;
 	z-index: 1000;
-	min-height: 100px;
-	min-width: 200px;
-	max-width: 50%;
+	height: 250px;
+	width: 270px;
 	max-height: 50%;
 	overflow-y: hidden;
 	overflow-x: hidden;
-	/*box-shadow: 2px 2px 3px #000;
-*/	
+	/*box-shadow: 2px 2px 3px #000;*/	
 }
 
 .carp-chars {
 	background: white;
-	height: 300px;
-	width: 100%;
-	padding: 3px;
+	height: 200px;
+	padding:10px 0 10px 10px;
 	overflow-y: auto;
 }
 
@@ -40,4 +38,5 @@
 
 .carp-container button:hover {
 	background: #ccc;
+	cursor: pointer;
 }
