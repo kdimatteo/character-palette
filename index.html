@@ -9,38 +9,32 @@
         <link rel="stylesheet" href="src/jquery.carp.css">
         <style>
             body { background: #ccc;}
-            .border-bottom {padding:30px; border-bottom:1px solid #333;}
+            .border-bottom { padding:30px; border-bottom:1px solid #333; }
         </style>
     </head>
     <body>
 
-        <script>    
-            var myChars = ["À", "Á", "Â"];
-            var myEscapedChars = ["&acute;", "&adc;", "&aleph;"];
-        </script>
-
         <div class="border-bottom">
-            <p>Using unescaped characters in an array scoped to window.</p>
-            <input type="text" data-carp="myChars" id="foo">
+            <p>Using unescaped characters in data attribute</p>
+            <input type="text" data-carp-chars="À,Á,Â" id="foo">
             <button data-trigger="carp" data-target="#foo">T</button>
         </div>
 
-
         <div class="border-bottom">
-            <p>Using escaped characters in an array scoped to window.</p>
-            <input type="text" data-carp="myEscapedChars" id="bar">
+            <p>Using escaped characters in data attribute.</p>
+            <input type="text" data-carp-chars="&lt;, &gt;, &quot;, &aleph;" id="bar">
             <button data-trigger="carp" data-target="#bar">T</button>
         </div>
 
         <div class="border-bottom">
-            <p>Using characters defined in a data-attr.</p>
+            <p>Using default special character palette (based on ascii range 192-439).</p>
             <input type="text" data-carp="myEscapedChars" id="baz">
             <button data-trigger="carp" data-target="#baz">T</button>
         </div>
 
          <div class="border-bottom">
             <p>Auto-close on selection</p>
-            <input type="text" data-carp="myEscapedChars" carp-autoclose="true" id="qux">
+            <input type="text" data-carp="myEscapedChars" data-carp-autoclose="true" id="qux">
             <button data-trigger="carp" data-target="#qux">T</button>
         </div>
 
